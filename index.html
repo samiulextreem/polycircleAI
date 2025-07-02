@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polycircle AI - Business Intelligence Through AI</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Polycircle AI transforms your business data into actionable insights using advanced AI. Connect your data sources and get ChatGPT-like capabilities for your business information.">
+    <meta name="keywords" content="business intelligence, AI, artificial intelligence, data analysis, business insights, strategic planning, market intelligence, operational efficiency">
+    <meta name="author" content="Polycircle AI">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://polycircleai.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://polycircleai.com/">
+    <meta property="og:title" content="Polycircle AI - Business Intelligence Redefined Through AI">
+    <meta property="og:description" content="Wish you had ChatGPT for your business data? We've got you covered. Transform your business with AI-powered insights.">
+    <meta property="og:image" content="https://polycircleai.com/polycircleAI.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://polycircleai.com/">
+    <meta property="twitter:title" content="Polycircle AI - Business Intelligence Redefined Through AI">
+    <meta property="twitter:description" content="Wish you had ChatGPT for your business data? We've got you covered. Transform your business with AI-powered insights.">
+    <meta property="twitter:image" content="https://polycircleai.com/polycircleAI.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +42,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="polycircleAI.svg" alt="Polycircle AI Logo">
+                    <img src="polycircleAI.svg" alt="Polycircle AI Logo - Business Intelligence Through AI">
                     <span>Polycircle AI</span>
                 </div>
                 <ul class="nav-links">
@@ -360,7 +385,7 @@
                 <p>Get in touch to learn how Polycircle AI can help your business</p>
             </div>
             <div class="contact-container">
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/mwpbzobz" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -377,6 +402,12 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
+                    <!-- Hidden input to specify the recipient email -->
+                    <input type="hidden" name="_replyto" value="hello@polycircleai.com">
+                    <!-- Hidden input to redirect after submission -->
+                    <input type="hidden" name="_next" value="https://polycircleai.com/thank-you.html">
+                    <!-- Hidden input to set custom subject -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Polycircle AI">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <div class="contact-info">
@@ -436,7 +467,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="polycircleAI.svg" alt="Polycircle AI Logo">
+                    <img src="polycircleAI.svg" alt="Polycircle AI Logo - Footer">
                     <span>Polycircle AI</span>
                 </div>
                 <div class="footer-links">
@@ -486,5 +517,36 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    
+    <!-- Structured Data / Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Polycircle AI",
+      "url": "https://polycircleai.com",
+      "logo": "https://polycircleai.com/polycircleAI.svg",
+      "description": "Polycircle AI transforms your business data into actionable insights using advanced AI technology.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via dell'Archeologia, 29",
+        "addressLocality": "Roma",
+        "addressRegion": "RM",
+        "postalCode": "00133",
+        "addressCountry": "IT"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+393477985350",
+        "contactType": "customer service",
+        "email": "hello@polycircleai.com"
+      },
+      "sameAs": [
+        "https://twitter.com/polycircleai",
+        "https://www.linkedin.com/company/polycircleai",
+        "https://www.facebook.com/polycircleai"
+      ]
+    }
+    </script>
 </body>
 </html>

@@ -167,16 +167,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(contactForm);
-            const formObject = Object.fromEntries(formData);
+            // Don't prevent default - let Formspree handle it
+            // But we can add some UI feedback
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
             
-            // Here you would typically send the form data to your server
-            console.log('Form submitted with data:', formObject);
+            // Change button text to show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
             
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            contactForm.reset();
+            // If for some reason the form doesn't redirect, reset the button after a delay
+            setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }, 3000);
         });
     }
 

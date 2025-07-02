@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Polycircle AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 2rem;
+        }
+        .thank-you-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .thank-you-content h1 {
+            color: #0099ff;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        .thank-you-content p {
+            color: #e0e6ed;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .back-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #0099ff, #66b3ff);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 153, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <div class="thank-you-container">
+        <div class="thank-you-content">
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully sent to our team at <strong>hello@polycircleai.com</strong>. We'll get back to you within 24 hours.</p>
+            <p>We're excited to learn more about your business and how Polycircle AI can help you transform your data into actionable insights.</p>
+            <a href="index.html" class="back-button">Back to Homepage</a>
+        </div>
+    </div>
+</body>
+</html>
