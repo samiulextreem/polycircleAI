@@ -227,4 +227,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update on scroll
     window.addEventListener('scroll', updateHeaderBackground);
+
+    // Email de-obfuscation to prevent spam bots
+    document.querySelectorAll('.email-obfuscated').forEach(span => {
+        const user = span.dataset.user;
+        const domain = span.dataset.domain;
+        const email = `${user}@${domain}`;
+        const mailto = `mailto:${email}`;
+        
+        const link = document.createElement('a');
+        link.href = mailto;
+        link.textContent = email;
+        
+        // Replace the placeholder span with the real link
+        span.parentNode.replaceChild(link, span);
+    });
 });
