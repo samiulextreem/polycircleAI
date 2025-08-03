@@ -242,4 +242,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // Replace the placeholder span with the real link
         span.parentNode.replaceChild(link, span);
     });
+
+    // JavaScript Email Obfuscation - Method 2
+    function decodeEmail() {
+        // Encoded email parts (Base64 encoded to make it less obvious)
+        const encodedUser = 'aGVsbG8='; // 'hello' encoded
+        const encodedDomain = 'cG9seWNpcmNsZWFpLmNvbQ=='; // 'polycircleai.com' encoded
+        
+        // Decode the email parts
+        const user = atob(encodedUser);
+        const domain = atob(encodedDomain);
+        const email = user + '@' + domain;
+        
+        // Create clickable email link
+        const emailElement = document.getElementById('email-display');
+        if (emailElement) {
+            const emailLink = document.createElement('a');
+            emailLink.href = 'mailto:' + email;
+            emailLink.textContent = email;
+            emailLink.style.color = 'inherit';
+            emailLink.style.textDecoration = 'none';
+            emailElement.parentNode.replaceChild(emailLink, emailElement);
+        }
+    }
+    
+    // Call the decode function
+    decodeEmail();
 });
