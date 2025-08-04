@@ -268,4 +268,69 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Call the decode function
     decodeEmail();
+
+    // Mouse-reactive title effect
+    const heroTitle = document.querySelector('.hero-content h1');
+    const heroSection = document.querySelector('.hero');
+    
+    if (heroTitle && heroSection) {
+        heroSection.addEventListener('mousemove', function(e) {
+            const rect = heroSection.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate center of the hero section
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Calculate mouse distance from center
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            // Apply transform based on mouse position
+            const rotateX = deltaY * 5; // Tilt up/down
+            const rotateY = deltaX * 5; // Tilt left/right
+            const translateX = deltaX * 10; // Move left/right
+            const translateY = deltaY * 10; // Move up/down
+            
+            // Apply the transform
+            heroTitle.style.transform = `
+                perspective(1000px) 
+                rotateX(${-rotateX}deg) 
+                rotateY(${rotateY}deg) 
+                translateX(${translateX}px) 
+                translateY(${translateY}px)
+                scale(${1 + Math.abs(deltaX) * 0.05})
+            `;
+            
+            // Add glow effect based on mouse proximity to title
+            const titleRect = heroTitle.getBoundingClientRect();
+            const titleCenterX = titleRect.left + titleRect.width / 2;
+            const titleCenterY = titleRect.top + titleRect.height / 2;
+            const distanceToTitle = Math.sqrt(
+                Math.pow(e.clientX - titleCenterX, 2) + 
+                Math.pow(e.clientY - titleCenterY, 2)
+            );
+            
+            // Maximum distance for effect (adjust as needed)
+            const maxDistance = 300;
+            const glowIntensity = Math.max(0, 1 - (distanceToTitle / maxDistance));
+            
+            // Apply glow effect
+            heroTitle.style.filter = `
+                drop-shadow(0 0 ${20 + glowIntensity * 30}px rgba(0, 255, 148, ${0.3 + glowIntensity * 0.4}))
+                brightness(${1 + glowIntensity * 0.2})
+            `;
+        });
+        
+        // Reset title when mouse leaves hero section
+        heroSection.addEventListener('mouseleave', function() {
+            heroTitle.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateX(0px) translateY(0px) scale(1)';
+            heroTitle.style.filter = 'drop-shadow(0 0 20px rgba(0, 255, 148, 0.3)) brightness(1)';
+        });
+        
+        // Add CSS transition for smooth animations
+        heroTitle.style.transition = 'transform 0.1s ease-out, filter 0.1s ease-out';
+        heroTitle.style.transformOrigin = 'center center';
+    }
 });
